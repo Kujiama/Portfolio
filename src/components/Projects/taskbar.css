@@ -1,0 +1,30 @@
+/* mac taskbar look alike */
+
+.card-taskbar{
+    background-color: #4B5563;
+}
+
+.card-dot{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.red{
+    background-color: #ff5f56;
+}
+
+.yellow{
+    background-color: #ffbd2e;
+}
+
+.green{
+    background-color: #27c93f;
+}
+
+
+
+
+

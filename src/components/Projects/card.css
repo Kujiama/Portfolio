@@ -1,0 +1,60 @@
+#project-card{
+    margin: 20px;
+    background-color: #4B5563;
+}
+
+.card-wrapper{
+    position: relative;
+    height:auto;
+    overflow: hidden;
+    border: 5px solid #4B5563;
+}
+
+.card-img{
+    width: 100%;
+    padding: 0;
+    transition: all 0.5s; /* Add a transition effect */
+}
+
+.card-desc-wrapper{
+    position: absolute; /* make position relative to card-wrapper */
+    width: 100%; /* take the full width of the parent */
+    height: 100%; /* take the full height of the parent */
+    color: white;
+    padding: 0; 
+    z-index: -1; 
+    transition: all 0.5s; 
+    background-color: transparent; 
+}
+
+.card-wrapper:hover .card-desc-wrapper{
+    z-index: 1;
+    background-color: rgba(55, 65, 81, 0.8);
+}
+
+.card-wrapper:hover .card-img{
+    filter: blur(8px);
+}
+
+
+/* for tablet */
+@media (max-width: 768px) {
+    .card-desc-wrapper p{
+        display: none;
+    }
+}
+
+/* for mobile */
+@media (max-width: 425px) {
+    .card-desc-wrapper p{
+        display: none; /* Hides the paragraph on mobile */
+    }
+}
+
+
+
+
+
+
+
+
