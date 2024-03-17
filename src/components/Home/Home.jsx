@@ -1,19 +1,20 @@
 import info from '../../england'
 import { TypeAnimation } from 'react-type-animation';
-import { useEffect , useRef, useState} from 'react';
+import { useEffect , useRef} from 'react';
 import BIRDS from 'vanta/dist/vanta.birds.min.js';
+import './home.css'
 
 
 const Home = () => {
   const vantaRef = useRef(null);
-  const [vantaEffect, setVantaEffect] = useState(0)
+  const vantaEffect = useRef(null);
 
   useEffect(() => {
     console.log("Birds running", BIRDS);
-    if (!vantaEffect) {
+    if (!vantaEffect.current) {
       console.log("Initializing VANTA");
       try {
-        setVantaEffect(BIRDS({
+        vantaEffect.current =BIRDS({
             el: vantaRef.current,
             mouseControls: true,
             touchControls: true,
@@ -25,7 +26,7 @@ const Home = () => {
             backgroundColor: 0xffffff,
             color1: 0xb107d7,
             birdSize: 0.50
-        }));
+        });
       } catch (error) {
         console.error("Error initializing VANTA:", error);
       }
@@ -33,7 +34,8 @@ const Home = () => {
     return () => {
       if (vantaEffect) {
         console.log("Destroying VANTA");
-        vantaEffect.destroy();
+        vantaEffect.current.destroy();
+        vantaEffect.current = null;
       }
     };
   }, []);
@@ -66,19 +68,41 @@ const Home = () => {
             {info.aboutMe}
           </p>
 
-          <ul className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mx-5 my-5">
+          <ul id="social-links" className="flex flex-wrap justify-center items-center gap-11 mx-5 my-5">
             {info.socials.map((social, index) => (
-              <li key={index}>
-                <a
-                  href={social.link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="text-2xl sm:text-3xl md:text-4xl hover:text-violet-500 transition-colors duration-300"
-                >
-                  {social.icon}
-                </a>
-              </li>
+              // ignore last 2 social links
+              index < info.socials.length - 2 && (
+                <li key={index} className='social-link hover:text-violet-500 transition-colors duration-200'>
+                  <a href={social.link} target="_blank" rel="noreferrer noopener" className="hover:text-violet-500 transition-colors duration-300 flex flex-col items-center justify-center">
+                    <span className='text-2xl sm:text-3xl md:text-4xl'>
+                      {social.icon}
+                    </span>
+                    <span className='social-link-text absolute'>
+                      {social.label}
+                    </span>
+                  </a>
+                </li>
+              )
             ))}
+          </ul>
+
+          <ul id="professional-links" className='flex flex-wrap justify-center items-center gap-11 mx-5 my-8'>
+            {info.socials.map((social, index) => (
+              // only display last 2 social links
+              index >= info.socials.length - 2 && (
+                <li key={index} className='social-link hover:text-violet-500 transition-colors duration-200'>
+                  <a href={social.link} target="_blank" rel="noreferrer noopener" className="hover:text-violet-500 transition-colors duration-300 flex flex-col items-center justify-center">
+                    <span className='text-2xl sm:text-3xl md:text-4xl'>
+                      {social.icon}
+                    </span>
+                    <span className='social-link-text absolute'>
+                      {social.label}
+                    </span>
+                  </a>
+                </li>
+              )
+            ))  
+            }
           </ul>
         </div>
       </main>

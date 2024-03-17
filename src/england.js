@@ -1,5 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faLinkedin,faGithub,faInstagram, faCode} from "@fortawesome/free-brands-svg-icons";
+import {faLinkedin,faGithub,faInstagram, faCodepen} from "@fortawesome/free-brands-svg-icons";
+import {faFile, faUser} from "@fortawesome/free-solid-svg-icons";
+import resume from "./pdf/resume.pdf";
+import coverLetter from "./pdf/coverLetter.pdf";
 
 // Import images
 import Assignment2Img from "./img/Assignment2.png";
@@ -13,23 +16,11 @@ import MyDentImg from "./img/MyDent.png";
 const info = {
   firstName: "England",
   lastName: "Pelenio",
-  position: "Frontend Web Developer", // e.g., "Frontend Web Developer"
-  miniBio: [
-    {
-      emoji: "👨‍💻",
-      text: "Passionate about building responsive and engaging web applications.",
-    },
-    {
-      emoji: "🌐",
-      text: "Committed to creating outstanding user experiences.",
-    },
-    {
-      emoji: "📈",
-      text: "Driven by impact, helping people through technology.",
-    },
-    // Add more entries as needed
-  ],
+  position: "Frontend Web Developer",
   gradient: "linear-gradient(to right, #b107d7, #a1d0f0)",
+  contact: {
+    email: "englandpelenio17@gmail.com",
+  },
   socials: [
     {
       link: "https://www.linkedin.com/in/england-pelenio-812269219/",
@@ -46,6 +37,22 @@ const info = {
       icon: <FontAwesomeIcon icon={faInstagram} />,
       label: "Instagram",
     },
+    {
+      link: "https://codepen.io/kujiama",
+      icon: <FontAwesomeIcon icon={faCodepen} />,
+      label: "Codepen",
+    },
+    {
+      link: resume,
+      icon: <FontAwesomeIcon icon={faUser} />,
+      label: "Resume",
+    },
+    {
+      link: coverLetter,
+      icon: <FontAwesomeIcon icon={faFile} />,
+      label: "CoverLetter",
+    }
+    
   ],
   aboutMe:
     "I am a Frontend Web Developer with a passion for building responsive and intriguing web applications with great user experiences that positively impact the people around me.",
@@ -60,8 +67,9 @@ const info = {
     }
   },
 
+  cta:"I'm always on the lookout for exciting opportunities and collaborations that will sharpen my skills and push the boundaries of web development. If my passion and portfolio resonate with you, let's connect to explore how we can create something incredible together.",
+
   stack:[
-    //html css javascript react nodejs express mongodb graphql tailwindcss bootstrap java  python  jquery
     {
       name: "HTML5",
       image: "https://img.icons8.com/color/48/000000/html-5.png",
@@ -114,6 +122,11 @@ const info = {
       name: "jQuery",
       image: "https://img.icons8.com/ios-filled/50/000000/jquery.png",
     },
+    {
+      name: "npm",
+      image: "https://img.icons8.com/color/48/000000/npm.png",
+    },
+
   ],
   
   project: [

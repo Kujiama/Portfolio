@@ -1,0 +1,16 @@
+.social-link {
+    position: relative; /* Ensure parent is positioned */
+    transition: all 0.3s ease;
+}
+
+.social-link-text {
+    position: absolute;
+    bottom: 0; /* Adjust as needed */
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+    opacity: 0; /* Start hidden */
+}
+
+.social-link:hover .social-link-text {
+    transform: translateY(20px); /* Move up on hover */
+    opacity: 1; /* Fully visible on hover */
+}

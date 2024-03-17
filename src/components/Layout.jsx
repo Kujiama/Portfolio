@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 import Home from "./Home/Home";
 import About from "./About/About";
 import Projects from "./Projects/Projects";
+import Contact from "./Contact/Contact";
+import Capstone from "./Capstone/Capstone";
 
 
 const Layout = () => {
@@ -24,6 +26,8 @@ const Layout = () => {
                         <Route exact path={'/'} element={<Home />} />
                         <Route exact path={'/about'} element={<About />} />
                         <Route exact path={'/projects'} element={<Projects />} />
+                        <Route exact path={'/contact'} element={<Contact />} />
+                        <Route exact path={'/capstone'} element={<Capstone />} />
                     </Routes>
                 </div>
                 <div>
