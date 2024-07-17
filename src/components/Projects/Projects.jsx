@@ -5,7 +5,7 @@ import info from "../../england";
 
 const Projects = () => {
     return (
-        <div className="flex flex-col md:flex-row items-center flex-wrap justify-center gap-5 mt-9">
+        <div className="flex flex-col md:flex-row items-center flex-wrap justify-center gap-5 mt-9 animate__animated animate__fadeIn">
             {info.project.map((project, index) => (
                 <ProjectCard key={index} project={project} />
             ))}

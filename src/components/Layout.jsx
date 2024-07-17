@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import 'animate.css';
 import Navbar from "./Navbar";
 import Home from "./Home/Home";
 import About from "./About/About";
 import Projects from "./Projects/Projects";
 import Contact from "./Contact/Contact";
-import Capstone from "./Capstone/Capstone";
-
 
 const Layout = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -21,15 +20,14 @@ const Layout = () => {
                 <div>
                     <Navbar darkMode={darkMode} handleDarkMode={handleDarkMode} />
                 </div>
-                <div className="flex-grow">
+                <main className="flex-grow">
                     <Routes>
                         <Route exact path={'/'} element={<Home />} />
                         <Route exact path={'/about'} element={<About />} />
                         <Route exact path={'/projects'} element={<Projects />} />
                         <Route exact path={'/contact'} element={<Contact />} />
-                        <Route exact path={'/capstone'} element={<Capstone />} />
                     </Routes>
-                </div>
+                </main>
                 <div>
                     <footer className="flex flex-col items-center py-6 w-full opacity-70">
                         <p> Raul England Pelenio </p>

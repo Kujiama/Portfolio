@@ -13,7 +13,7 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         alert(
-          "Hello " + contact.name + " your message has been sent. unfortunately my email trial has been deprecated."
+          "Hello " + contact.name + " your message has been sent. unfortunately my email service has been deprecated."
         )
         alert(
           "I appreciate your time and effort to reach out to me and contact me through my email, englandpelenio17@gmail.com"
@@ -89,9 +89,6 @@ const Contact = () => {
           </form>
         </div>
       </div>
-
-
-
     );
 }
  

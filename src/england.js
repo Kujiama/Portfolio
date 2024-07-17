@@ -42,17 +42,16 @@ const info = {
       icon: <FontAwesomeIcon icon={faCodepen} />,
       label: "Codepen",
     },
-    {
-      link: resume,
-      icon: <FontAwesomeIcon icon={faUser} />,
-      label: "Resume",
-    },
-    {
-      link: coverLetter,
-      icon: <FontAwesomeIcon icon={faFile} />,
-      label: "CoverLetter",
-    }
-    
+    // {
+    //   link: resume,
+    //   icon: <FontAwesomeIcon icon={faUser} />,
+    //   label: "Resume",
+    // },
+    // {
+    //   link: coverLetter,
+    //   icon: <FontAwesomeIcon icon={faFile} />,
+    //   label: "CoverLetter",
+    // }
   ],
   aboutMe:
     "I am a Frontend Web Developer with a passion for building responsive and intriguing web applications with great user experiences that positively impact the people around me.",

@@ -6,7 +6,7 @@ const About = () => {
     return (
       <div
         id="about"
-        className="flex flex-col justify-center items-center min-h-[calc(100vh-175px)] px-4 md:px-8"
+        className="flex flex-col justify-center items-center min-h-[calc(100vh-175px)] px-4 md:px-8 animate__animated animate__fadeIn"
       >
         <section className="about-me w-full max-w-4xl mx-auto">
           <div className="container">
